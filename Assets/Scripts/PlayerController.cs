@@ -4,6 +4,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed;
+    public int health = 5;
     private int score;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -47,6 +48,11 @@ public class PlayerController : MonoBehaviour
             score = score + 1;
             Debug.Log("Score: " + score);
             other.gameObject.SetActive(false);
+        }
+        if (other.gameObject.CompareTag("Trap"))
+        {
+           health = health - 1;
+            Debug.Log("Health: " + health); 
         }
     }
 
