@@ -4,7 +4,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed;
-
+    private int score;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,6 +37,16 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKey(KeyCode.D)) 
         {
             transform.Translate(speed * Time.deltaTime, 0, 0);
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Pickup"))
+        { 
+            score = score + 1;
+            Debug.Log("Score: " + score);
+            other.gameObject.SetActive(false);
         }
     }
 
