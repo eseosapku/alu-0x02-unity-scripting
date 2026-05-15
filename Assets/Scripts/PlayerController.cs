@@ -24,11 +24,11 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKey(KeyCode.W))
         {
-            transform.Translate(0, 0, -speed * Time.deltaTime);        
+            transform.Translate(0, 0, speed * Time.deltaTime);        
         }
         if (Input.GetKeyDown(KeyCode.S) || Input.GetKey(KeyCode.S)) 
         {
-            transform.Translate(0, 0, speed * Time.deltaTime);
+            transform.Translate(0, 0, -speed * Time.deltaTime);
         }
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKey(KeyCode.A)) 
         {
