@@ -54,6 +54,10 @@ public class PlayerController : MonoBehaviour
            health = health - 1;
             Debug.Log("Health: " + health); 
         }
+        if (other.gameObject.CompareTag("Goal")) 
+        {
+            Debug.Log("You win!");
+        }
     }
 
 }
